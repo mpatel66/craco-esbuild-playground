@@ -1,3 +1,9 @@
+import React from 'react'
+import { ThemeProvider } from 'styled-components';
+// NOTE the macro version doesn't seem to work - get import error
+// TODO - figure out why and fix it. 
+// import { ThemeProvider } from 'styled-components/macro';
+import { theme as fluidlyTheme, InputLabel, selectColorByUse, BodyRegular } from '@fluidly/ui-components';
 import './App.css';
 import { Form, Field } from 'react-final-form';
 import {FORM_ERROR} from 'final-form'
@@ -11,6 +17,9 @@ const CustomInput = ({name, label}) => {
           <div className="input-field">
             <label className="input-label">{label}</label>
             <input {...input} type="text" placeholder={name} className="input-actual"/>
+            <InputLabel >I ain't gettin' on no plane fool!</InputLabel> 
+            <BodyRegular color={selectColorByUse('future')}>Hello WORLD!</BodyRegular>
+
             {(meta.error || meta.submitError) && meta.touched && <span>{meta.error || meta.submitError}</span>}
           </div>
         )}
@@ -32,7 +41,8 @@ function App() {
   }
   
   return (
-    <>
+    <ThemeProvider theme={{ ...fluidlyTheme }}>
+
       <h1>
         Hello! Welcome to the React Final Form Playground
       </h1>
@@ -51,7 +61,7 @@ function App() {
           )
         }
       />
-    </>
+    </ThemeProvider>
   );
 }
 
