@@ -48,6 +48,7 @@
   "devDependencies": {
     "@craco/craco": "^6.1.2",
     "@types/styled-components": "^5.1.10",
-    "craco-esbuild": "^0.3.2"
+    "craco-esbuild": "^0.3.2",
+    "esbuild-plugin-svgr": "^0.0.2"
   }
 }

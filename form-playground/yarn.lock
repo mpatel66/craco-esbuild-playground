@@ -4821,6 +4821,13 @@ esbuild-loader@^2.12.0:
     type-fest "^1.0.1"
     webpack-sources "^2.2.0"
 
+esbuild-plugin-svgr@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/esbuild-plugin-svgr/-/esbuild-plugin-svgr-0.0.2.tgz#45567d61ba19f94dee9a8c7729cc7f0c581d73f2"
+  integrity sha512-VFIRxQv0Iwqf5RGQ6h81ojHxHVaHIqJXiRgq8uGDCzl7CLqyI+9oKOnnVILA8Ma3mBTbK4bPsvlVO4kxtKeubA==
+  dependencies:
+    "@svgr/core" "^5.5.0"
+
 esbuild@^0.11.19:
   version "0.11.23"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.23.tgz#c42534f632e165120671d64db67883634333b4b8"

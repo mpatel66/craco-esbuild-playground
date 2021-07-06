@@ -3,19 +3,20 @@ import styled, { ThemeProvider } from "styled-components";
 // NOTE the macro version doesn't seem to work - get import error
 // TODO - figure out why and fix it.
 // import styled, { ThemeProvider } from 'styled-components/macro';
-import {
-  theme as fluidlyTheme,
-  InputLabel,
-  selectColorByUse,
-  BodyRegular,
-} from "@fluidly/ui-components";
+// import {
+//   theme as fluidlyTheme,
+//   InputLabel,
+//   selectColorByUse,
+//   BodyRegular,
+// } from "@fluidly/ui-components";
 import "./App.css";
 import { Form, Field } from "react-final-form";
 import { FORM_ERROR } from "final-form";
+import { ReactComponent as Logo } from "./logo.svg";
 
-const RedText = styled(BodyRegular)`
-  color: ${selectColorByUse("future")};
-`;
+// const RedText = styled(BodyRegular)`
+//   color: ${selectColorByUse("future")};
+// `;
 
 interface InputProps {
   name: string;
@@ -36,8 +37,9 @@ const CustomInput = ({ name, label }: InputProps) => {
               placeholder={name}
               className="input-actual"
             />
-            <InputLabel>I ain't gettin' on no plane fool!</InputLabel>
-            <RedText>Hello WORLD!</RedText>
+            {/* <InputLabel>I ain't gettin' on no plane fool!</InputLabel> */}
+            {/* <RedText>Hello WORLD!</RedText> */}
+            <p>Hello WORLD!</p>
 
             {(meta.error || meta.submitError) && meta.touched && (
               <span>{meta.error || meta.submitError}</span>
@@ -61,8 +63,10 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={{ ...fluidlyTheme }}>
+    // <ThemeProvider theme={{ ...fluidlyTheme }}>
+    <>
       <h1>Hello! Welcome to the React Final Form Playground</h1>
+      <Logo />
       <Form
         onSubmit={onSubmit}
         render={({ handleSubmit, submitError }) => (
@@ -77,7 +81,8 @@ function App() {
           </form>
         )}
       />
-    </ThemeProvider>
+    </>
+    // </ThemeProvider>
   );
 }
 
