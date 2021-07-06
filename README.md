@@ -1,2 +1,3 @@
-# react-final-form-playground
-Playing around with react final form
+# Craco Esbuild Playground
+
+Playing around with esbuild-craco

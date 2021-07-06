@@ -23,6 +23,10 @@ interface InputProps {
   label: string;
 }
 
+const SmallLogo = styled(Logo)`
+  height: 100px;
+`;
+
 const CustomInput = ({ name, label }: InputProps) => {
   const required = (value: any) => (value ? "" : "Required");
   return (
@@ -65,8 +69,8 @@ function App() {
   return (
     // <ThemeProvider theme={{ ...fluidlyTheme }}>
     <>
-      <h1>Hello! Welcome to the React Final Form Playground</h1>
-      <Logo />
+      <h1>Hello! Welcome to the Craco ESbuild Playground</h1>
+      <SmallLogo />
       <Form
         onSubmit={onSubmit}
         render={({ handleSubmit, submitError }) => (
