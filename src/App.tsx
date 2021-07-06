@@ -2,7 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 // NOTE the macro version doesn't seem to work - get import error
 // TODO - figure out why and fix it.
-// import styled, { ThemeProvider } from 'styled-components/macro';
+// import styled, { ThemeProvider } from "styled-components/macro";
 import {
   theme as fluidlyTheme,
   BodyRegular,
@@ -12,8 +12,7 @@ import {
 import "./App.css";
 import { Form, Field } from "react-final-form";
 import { FORM_ERROR } from "final-form";
-import { ReactComponent as Logo } from "./logo.svg";
-import ImproveCashflow from "./ImproveCashflow";
+import { Forecast, Rocket } from "@fluidly/icons";
 
 const RedText = styled(BodyRegular)`
   color: ${selectColorByUse("future")};
@@ -23,10 +22,6 @@ interface InputProps {
   name: string;
   label: string;
 }
-
-const SmallLogo = styled(Logo)`
-  height: 100px;
-`;
 
 const CustomInput = ({ name, label }: InputProps) => {
   const required = (value: any) => (value ? "" : "Required");
@@ -70,8 +65,9 @@ function App() {
   return (
     <ThemeProvider theme={{ ...fluidlyTheme }}>
       <h1>Hello! Welcome to the Craco ESbuild Playground</h1>
-      <SmallLogo />
-      <ImproveCashflow />
+      <Forecast />
+      <Rocket />
+      {/* <ImproveCashflow /> */}
       <Form
         onSubmit={onSubmit}
         render={({ handleSubmit, submitError }) => (
