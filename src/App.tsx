@@ -8,14 +8,25 @@ import {
   BodyRegular,
   selectColorByUse,
   InputLabel,
+  DateInput,
 } from "@fluidly/ui-components";
 import "./App.css";
 import { Form, Field } from "react-final-form";
 import { FORM_ERROR } from "final-form";
 import { Forecast, Rocket } from "@fluidly/icons";
+import arrowForwardSvg from "@fluidly/icons/svg/arrow-foward.svg";
 
 const RedText = styled(BodyRegular)`
   color: ${selectColorByUse("future")};
+`;
+
+const BackgroundArrow = styled.div`
+  background-image: url(${arrowForwardSvg});
+  height: 50px;
+`;
+
+const DateBox = styled.div`
+  width: 300px;
 `;
 
 interface InputProps {
@@ -67,7 +78,8 @@ function App() {
       <h1>Hello! Welcome to the Craco ESbuild Playground</h1>
       <Forecast />
       <Rocket />
-      {/* <ImproveCashflow /> */}
+
+      <BackgroundArrow />
       <Form
         onSubmit={onSubmit}
         render={({ handleSubmit, submitError }) => (
@@ -82,6 +94,9 @@ function App() {
           </form>
         )}
       />
+      <DateBox>
+        <DateInput onChange={() => console.log("Hey")} />
+      </DateBox>
     </ThemeProvider>
   );
 }
